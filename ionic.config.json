@@ -1,0 +1,8 @@
+{
+  "name": "Cinemate",
+  "app_id": "60cecda9",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
