@@ -1,0 +1,35 @@
+export interface postcodeResponse {
+    admin_county:null,
+    admin_district:string
+    admin_ward:string
+    ccg:string
+    codes:
+        {
+            admin_county:string,
+            admin_district:string,
+            admin_ward:string
+            ccg:string
+            nuts:string
+            parish:string
+            parliamentary_constituency:string
+        }
+    country:string
+    distance:number
+    eastings:number
+    european_electoral_region:string
+    incode:string
+    latitude:number
+    longitude:number
+    lsoa:string
+    msoa:string
+    nhs_ha:string
+    northings:number
+    nuts:string
+    outcode:string
+    parish:string
+    parliamentary_constituency:string
+    postcode:string
+    primary_care_trust:string
+    quality:number
+    region:string
+}

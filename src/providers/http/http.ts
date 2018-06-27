@@ -1,6 +1,6 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { Headers } from '@angular/http';
 import { Injectable } from '@angular/core';
-
 /*
   Generated class for the HttpProvider provider.
 
@@ -9,6 +9,8 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class HttpProvider {
+
+  
 
   constructor(public http: HttpClient) {
     console.log('Hello HttpProvider Provider');
@@ -23,6 +25,20 @@ export class HttpProvider {
         'lon': long
       }
     });
+  }
+
+  getCinemas(postcode) {
+
+    var httpheaders = new HttpHeaders();
+    httpheaders.append('Access-Control-Allow-Origin' , '*');
+    httpheaders.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+    httpheaders.append('Accept','application/json');
+    httpheaders.append('content-type','application/json');
+     //let options = new RequestOptions({headers: httpheaders,withCredentials:true})
+     
+     
+    let url = 'http://moviesapi.herokuapp.com/cinemas/find/'+postcode;
+    return this.http.get(url, {})
   }
 
 }
